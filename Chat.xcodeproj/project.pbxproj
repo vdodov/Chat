@@ -13,6 +13,13 @@
 		E6500CDA246424D400B56DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6500CD9246424D400B56DDD /* Assets.xcassets */; };
 		E6500CDD246424D400B56DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6500CDB246424D400B56DDD /* LaunchScreen.storyboard */; };
 		E6500CEB2464253B00B56DDD /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6500CEA2464253B00B56DDD /* ConversationsController.swift */; };
+		E696521724642BC400BD5A9F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696521624642BC400BD5A9F /* LoginController.swift */; };
+		E696521924642BE800BD5A9F /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696521824642BE800BD5A9F /* RegisterationController.swift */; };
+		E696521B24642E3B00BD5A9F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696521A24642E3B00BD5A9F /* Extension.swift */; };
+		E696521D2464353A00BD5A9F /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696521C2464353A00BD5A9F /* InputContainerView.swift */; };
+		E696521F2464377D00BD5A9F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696521E2464377D00BD5A9F /* CustomTextField.swift */; };
+		E6AC94382465319400DBE822 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC94372465319400DBE822 /* LoginViewModel.swift */; };
+		E6AC943A2465372700DBE822 /* RegisterationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC94392465372700DBE822 /* RegisterationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		E6500CDC246424D400B56DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6500CDE246424D400B56DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6500CEA2464253B00B56DDD /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		E696521624642BC400BD5A9F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E696521824642BE800BD5A9F /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
+		E696521A24642E3B00BD5A9F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		E696521C2464353A00BD5A9F /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		E696521E2464377D00BD5A9F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E6AC94372465319400DBE822 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E6AC94392465372700DBE822 /* RegisterationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +89,7 @@
 		E6500CE4246424F600B56DDD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E696521A24642E3B00BD5A9F /* Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -89,6 +104,7 @@
 		E6500CE6246424FE00B56DDD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E696521524642B8E00BD5A9F /* Authentication */,
 				E6500CEA2464253B00B56DDD /* ConversationsController.swift */,
 			);
 			path = Controller;
@@ -97,6 +113,8 @@
 		E6500CE72464250200B56DDD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E6AC94372465319400DBE822 /* LoginViewModel.swift */,
+				E6AC94392465372700DBE822 /* RegisterationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -104,6 +122,8 @@
 		E6500CE82464250400B56DDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E696521C2464353A00BD5A9F /* InputContainerView.swift */,
+				E696521E2464377D00BD5A9F /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +133,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E696521524642B8E00BD5A9F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E696521624642BC400BD5A9F /* LoginController.swift */,
+				E696521824642BE800BD5A9F /* RegisterationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +214,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E696521924642BE800BD5A9F /* RegisterationController.swift in Sources */,
+				E6AC943A2465372700DBE822 /* RegisterationViewModel.swift in Sources */,
+				E696521D2464353A00BD5A9F /* InputContainerView.swift in Sources */,
 				E6500CD5246424D200B56DDD /* ViewController.swift in Sources */,
+				E696521B24642E3B00BD5A9F /* Extension.swift in Sources */,
 				E6500CD1246424D200B56DDD /* AppDelegate.swift in Sources */,
 				E6500CEB2464253B00B56DDD /* ConversationsController.swift in Sources */,
 				E6500CD3246424D200B56DDD /* SceneDelegate.swift in Sources */,
+				E696521724642BC400BD5A9F /* LoginController.swift in Sources */,
+				E6AC94382465319400DBE822 /* LoginViewModel.swift in Sources */,
+				E696521F2464377D00BD5A9F /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
