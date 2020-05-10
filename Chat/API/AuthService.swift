@@ -53,7 +53,7 @@ struct AuthService {
           
           let data = ["email": credentials.email,
                       "fullname": credentials.fullname,
-                      "profileIamgeUrl": profileImageUrl,
+                      "profileImageUrl": profileImageUrl,
                       "uid": uid,
                       "username": credentials.username] as [String: Any]
           

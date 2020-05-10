@@ -105,6 +105,25 @@ extension UIViewController {
     }
     
   }
+  
+  func configureNavigationBar(withTitle title: String, prefersLargeTitles: Bool) {
+    let apperane = UINavigationBarAppearance()
+    apperane.configureWithOpaqueBackground()
+    apperane.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    apperane.backgroundColor = .systemPurple
+    
+    navigationController?.navigationBar.standardAppearance = apperane
+    navigationController?.navigationBar.compactAppearance = apperane
+    navigationController?.navigationBar.scrollEdgeAppearance = apperane
+    
+    navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+    navigationItem.title = title
+    navigationController?.navigationBar.tintColor = .white
+    navigationController?.navigationBar.isTranslucent = true
+    
+    navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+    
+  }
 }
 
 
