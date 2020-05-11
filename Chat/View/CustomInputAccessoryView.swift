@@ -18,7 +18,7 @@ class CustomInputAccessoryView: UIView {
   
   weak var delegate: CustomInputAccessoryViewDelegate?
   
-  let messageInputTextView: UITextView = {
+  private let messageInputTextView: UITextView = {
     let tv = UITextView()
     tv.font = UIFont.systemFont(ofSize: 16)
     tv.isScrollEnabled = false
@@ -75,13 +75,21 @@ class CustomInputAccessoryView: UIView {
   }
   
   // MARK: - Selectors
+  
+  @objc func handleTextInputChange() {
+    placeholderLabel.isHidden = !self.messageInputTextView.text.isEmpty
+  }
+  
   @objc func handleSendMessage() {
     guard let message = messageInputTextView.text else { return }
     delegate?.inputView(self, wantsToSend: message)
   }
   
-  @objc func handleTextInputChange() {
-    placeholderLabel.isHidden = !self.messageInputTextView.text.isEmpty
+  // MARK: - Helper Functions
+  
+  func clearMessageText() {
+    messageInputTextView.text = nil
+    placeholderLabel.isHidden = false
   }
   
   required init?(coder: NSCoder) {
