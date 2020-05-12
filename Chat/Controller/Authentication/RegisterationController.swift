@@ -16,6 +16,8 @@ class RegisterationController: UIViewController {
   private var viewModel = RegisterationViewModel()
   private var profileImage: UIImage?
   
+  weak var delegate: AuthenticationDelegate?
+  
   private let plusPhotoButton: UIButton = {
     let button = UIButton(type: .system)
     button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
@@ -106,13 +108,14 @@ class RegisterationController: UIViewController {
     
     AuthService.shared.createUser(credentials: credentials) { (error) in
       if let error = error {
-        print("DEBUG: \(error.localizedDescription)")
         self.showLoader(false)
+        self.showError(error.localizedDescription)
         return
       }
       
       self.showLoader(false)
-      self.dismiss(animated: true, completion: nil)
+//      self.dismiss(animated: true, completion: nil)
+      self.delegate?.authenticationComplete()
     }
   }
   

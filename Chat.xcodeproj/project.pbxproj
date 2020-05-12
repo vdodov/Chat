@@ -194,9 +194,8 @@
 		E6500CE82464250400B56DDD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E6AC945324690EE100DBE822 /* Message.swift */,
-				E696521C2464353A00BD5A9F /* InputContainerView.swift */,
 				E696521E2464377D00BD5A9F /* CustomTextField.swift */,
+				E696521C2464353A00BD5A9F /* InputContainerView.swift */,
 				E6AC94432468329900DBE822 /* UserCell.swift */,
 				E6AC944D2469003000DBE822 /* CustomInputAccessoryView.swift */,
 				E6AC944F2469072800DBE822 /* MessageCell.swift */,
@@ -212,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				E6AC9445246834E100DBE822 /* User.swift */,
+				E6AC945324690EE100DBE822 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

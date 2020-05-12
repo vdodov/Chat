@@ -17,6 +17,7 @@ class ConversationsController: UIViewController {
   
   private let tableView = UITableView()
   private var conversations = [Conversation]()
+  private var conversationDictionary = [String: Conversation]()
   
   private let newMessageButton: UIButton = {
     let button = UIButton(type: .system)
@@ -66,8 +67,18 @@ class ConversationsController: UIViewController {
   // MARK: - API
   
   func fetchConversations() {
+    showLoader(true)
     Service.fetchConversations { conversations in
-      self.conversations = conversations
+//      self.conversations = conversations
+      
+      conversations.forEach { conversation in
+        let message = conversation.message
+        self.conversationDictionary[message.chatPartnerId] = conversation
+      }
+      
+      self.showLoader(false)
+      
+      self.conversations = Array(self.conversationDictionary.values)
       self.tableView.reloadData()
     }
   }
@@ -76,9 +87,8 @@ class ConversationsController: UIViewController {
     if Auth.auth().currentUser?.uid == nil {
       print("DEBUG: User is not logged in. Present login screan here..")
       presentLoginScreen()
-    } else {
-      print("DEBUG: User id is \(Auth.auth().currentUser?.uid)")
     }
+    
   }
   
   func logout() {
@@ -95,6 +105,7 @@ class ConversationsController: UIViewController {
   func presentLoginScreen() {
     DispatchQueue.main.async {
       let controller = LoginController()
+      controller.delegate = self
       let nav = UINavigationController(rootViewController: controller)
       nav.modalPresentationStyle = .fullScreen
       self.present(nav, animated: true, completion: nil)
@@ -167,7 +178,7 @@ extension ConversationsController: UITableViewDelegate {
 extension ConversationsController: NewMessageControllerDelegate {
   func controller(_ controller: NewMessageController, wantsToStartChatWith user: User) {
     //    print("DEBUG: User in converstation controller is \(user.username)")
-    controller.dismiss(animated: true, completion: nil)
+    dismiss(animated: true, completion: nil)
     showChatController(forUser: user)
   }
 }
@@ -178,4 +189,16 @@ extension ConversationsController: ProfileControllerDelegate {
   func handleLogout() {
     logout()
   }
+}
+
+// MARK: - AuthenticationDelegate
+
+extension ConversationsController: AuthenticationDelegate {
+  func authenticationComplete() {
+    dismiss(animated: true, completion: nil)
+    configureUI()
+    fetchConversations()
+  }
+  
+  
 }
