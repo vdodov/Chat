@@ -281,10 +281,17 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - PromisesObjC (1.2.8)
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
+  - XCGLogger (7.0.1):
+    - XCGLogger/Core (= 7.0.1)
+  - XCGLogger/Core (7.0.1):
+    - ObjcExceptionBridging
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -293,6 +300,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - JGProgressHUD (~> 2.0.3)
   - SDWebImage (~> 4.4.2)
+  - XCGLogger (~> 7.0.1)
 
 SPEC REPOS:
   trunk:
@@ -318,8 +326,10 @@ SPEC REPOS:
     - JGProgressHUD
     - leveldb-library
     - nanopb
+    - ObjcExceptionBridging
     - PromisesObjC
     - SDWebImage
+    - XCGLogger
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -344,9 +354,11 @@ SPEC CHECKSUMS:
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  XCGLogger: 1943831ef907df55108b0b18657953f868de973b
 
-PODFILE CHECKSUM: c80b532a6d443051e176adbadcecb10a42d930ca
+PODFILE CHECKSUM: 3a38d8157cdac5b67cc12a6ba69edc5dbae0ff9e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

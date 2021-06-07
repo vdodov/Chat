@@ -12,4 +12,6 @@ target 'Chat' do
 	pod 'Firebase/Firestore'
 	pod 'SDWebImage','~>4.4.2'
 	pod 'JGProgressHUD','~>2.0.3'
+	pod 'XCGLogger', '~> 7.0.1'
+
 end
